@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Genie</string>
     <string name="title_activity_chat">Genie</string>
+    <string name="reload">refresh</string>
 </resources>

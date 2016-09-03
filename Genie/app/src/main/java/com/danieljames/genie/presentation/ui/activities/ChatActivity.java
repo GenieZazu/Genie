@@ -8,6 +8,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
@@ -138,19 +140,24 @@ public class ChatActivity extends AppCompatActivity {
             }
         }, null);
 
-//        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
-//                new Response.Listener<String>() {
-//                    @Override
-//                    public void onResponse(String response) {
-//                        Log.e("Response is: ", " "+ response.toString());
-//                    }
-//                }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                Log.e("TAG", "onErrorResponse: " );
-//            }
-//        });
-//
        queue.add(request);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.app_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+           finish();
+            startActivity(getIntent());
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

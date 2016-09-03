@@ -45,6 +45,7 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ChatLi
             holder.message.setBackgroundColor(context.getResources().getColor(R.color.genie_color));
             holder.message.setText(messageModel.getSender() + ": " + messageModel.getText());
             if (messageModel.getImageUrl() != null){
+                holder.imageView.setVisibility(View.VISIBLE);
                 Log.e("Image", "onBindViewHolder: " + messageModel.getImageUrl() );
                 loadImage(holder.imageView, messageModel.getImageUrl());
             }
@@ -55,7 +56,7 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ChatLi
     private void loadImage(ImageView imageView, String imageUrl){
         if (imageUrl != null){
 
-            Picasso.with(context).load("http://i.imgur.com/DvpvklR.png").into(imageView);
+            Picasso.with(context).load(imageUrl).into(imageView);
         }
     }
 

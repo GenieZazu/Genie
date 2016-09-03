@@ -17,7 +17,6 @@ public class ApiClient {
                 .baseUrl(BASE_URL)
                 .addConverterFactory(JacksonConverterFactory.create())
                 .build();
-
         return retrofit;
     }
 }

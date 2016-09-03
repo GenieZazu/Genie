@@ -64,8 +64,9 @@ public class ChatActivity extends AppCompatActivity {
         adapter = new ChatListAdapter(chatList);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        layoutManager.setStackFromEnd(true);
-        layoutManager.setSmoothScrollbarEnabled(false);
+//        layoutManager.setStackFromEnd(true);
+//        layoutManager.setSmoothScrollbarEnabled(false);
+        layoutManager.scrollToPosition(chatList.size());
         messageList.setLayoutManager(layoutManager);
         messageList.setAdapter(adapter);
     }
